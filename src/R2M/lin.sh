@@ -59,13 +59,17 @@ PROFILE_NAME="h2-dev"
 # NOTE: We use "$HOME/.config" as the Linux/macOS equivalent of "%APPDATA%\Roaming"
 PROFILE_PATH="$HOME/.config/r2modmanPlus-local/HadesII/profiles/$PROFILE_NAME/ReturnOfModding"
 
-# We use $SCRIPT_DIR to make the relative paths absolute and robust
-FOLDER1="$SCRIPT_DIR/../src"
-FOLDER2="$SCRIPT_DIR/../data"
+# Get the true, absolute path to the project root (one level up from the script)
+PROJECT_ROOT="$(cd "$SCRIPT_DIR/.." &> /dev/null && pwd)"
+
+# We use $PROJECT_ROOT to build clean, absolute paths
+FOLDER1="$PROJECT_ROOT/src"
+FOLDER2="$PROJECT_ROOT/data"
 
 # Set link paths using the variables
 LINK1="$PROFILE_PATH/plugins/$MOD_NAME"
 LINK2="$PROFILE_PATH/plugins_data/$MOD_NAME"
+
 
 # ####################################################################
 
